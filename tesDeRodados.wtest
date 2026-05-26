@@ -23,5 +23,10 @@ describe "test de rodados" {
         cultura.agregarAFlota(trafic)
         
     }
-    test"test"{}
+    test"peso total de la flota de deportes"{
+        assert.equals(3900+1350+1200,deportes.pesoTotalFlota())
+    }
+    test "cultura no esta bien equipada porque tiene a la trafic "{
+        assert.notThat(cultura.estaBienEquipada())
+    }
 }

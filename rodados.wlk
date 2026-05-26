@@ -119,7 +119,7 @@ class AutoEspecial {
 // en consola const especial1 = new AutoEspecial(capacidad=5,peso=1000,velocidad=150,color="beige")
 }
 
-class Dependecia {
+class Dependencia {
     const flota = []
     const empleados
     
