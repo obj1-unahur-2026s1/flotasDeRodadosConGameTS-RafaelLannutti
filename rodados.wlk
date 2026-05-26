@@ -118,3 +118,47 @@ class AutoEspecial {
     }   
 // en consola const especial1 = new AutoEspecial(capacidad=5,peso=1000,velocidad=150,color="beige")
 }
+
+class Dependecia {
+    const flota = []
+    const empleados
+    
+    method agregarAFlota(rodado){
+        flota.add(rodado)
+    }
+    method quitarDeFlota(rodado){
+        flota.remove(rodado)
+    }
+    method pesoTotalFlota(){
+        return flota.sum({ r => r.peso()})
+    }
+    method estaBienEquipada(){
+        return flota.size() > 3 && self.todosPuedenIrA(100)
+    }
+    method todosPuedenIrA(velocidad){
+        return flota.all({f =>f.velocidad() >= velocidad})
+    }
+    
+    method capacidadTotalEnColor(color){
+        return self.rodadosDelColor(color).sum({r => r.velocidad()})
+    }
+    method rodadosDelColor(color) {
+      return flota.filter({ r => r.color() == color})
+    }
+    method colorDelRodadoMasRapido(){
+        return self.rodadoMasRapido().color()
+    }
+    method rodadoMasRapido(){
+        return flota.max({r =>r.velocidad()})
+    }
+
+    method capacidadFaltante(){
+        return flota.sum({f =>f.capacidad()})
+    }
+
+    method esGrande(){
+        empleados >=40 && flota.size () >5
+    }
+
+
+}
